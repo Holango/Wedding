@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Intro from './components/Intro';
 
 const Main = () => (
@@ -14,24 +14,55 @@ const Main = () => (
   </div>
 );
 
-const sections = [<Main />, <Intro />]; // 1페이지: 메인, 2페이지: Intro
+const sections = [<Main />, <Intro />];
 
 function App() {
   const [currentSection, setCurrentSection] = useState(0);
+  const touchStartY = useRef(null);
 
+  const scrollToSection = (index) => {
+    if (index >= 0 && index < sections.length) {
+      setCurrentSection(index);
+    }
+  };
+
+  // 데스크톱 휠
   useEffect(() => {
     const handleWheel = (e) => {
       if (e.deltaY > 0 && currentSection < sections.length - 1) {
-        setCurrentSection((prev) => prev + 1);
+        scrollToSection(currentSection + 1);
       } else if (e.deltaY < 0 && currentSection > 0) {
-        setCurrentSection((prev) => prev - 1);
+        scrollToSection(currentSection - 1);
       }
     };
 
     window.addEventListener('wheel', handleWheel, { passive: true });
+    return () => window.removeEventListener('wheel', handleWheel);
+  }, [currentSection]);
+
+  // 모바일 터치
+  useEffect(() => {
+    const handleTouchStart = (e) => {
+      touchStartY.current = e.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (e) => {
+      const touchEndY = e.changedTouches[0].clientY;
+      const diff = touchStartY.current - touchEndY;
+
+      if (diff > 50 && currentSection < sections.length - 1) {
+        scrollToSection(currentSection + 1); // swipe up
+      } else if (diff < -50 && currentSection > 0) {
+        scrollToSection(currentSection - 1); // swipe down
+      }
+    };
+
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchend', handleTouchEnd, { passive: true });
 
     return () => {
-      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchend', handleTouchEnd);
     };
   }, [currentSection]);
 
