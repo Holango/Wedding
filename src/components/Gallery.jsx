@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const images = [
-  'https://ibb.co/bR5xkzdD',
+  'https://i.ibb.co/93HJ7sYS/2025-05-19-074003.png',
   'https://via.placeholder.com/400x600?text=사진2',
   'https://via.placeholder.com/400x600?text=사진3',
 ];
