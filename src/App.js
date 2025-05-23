@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Intro from './components/Intro';
+import Gallery from './components/Gallery';
 
 const Main = () => (
   <div style={{
@@ -14,7 +15,7 @@ const Main = () => (
   </div>
 );
 
-const sections = [<Main />, <Intro />];
+const sections = [<Main />, <Intro />, <Gallery />];
 
 function App() {
   const [currentSection, setCurrentSection] = useState(0);
