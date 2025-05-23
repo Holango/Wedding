@@ -1,13 +1,19 @@
+import Intro from './Intro';
+
+
 function App() {
   return (
     <div style={{
       display: 'flex',
+      flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
       height: '100vh',
+      padding: '2rem',
       fontSize: '2rem'
     }}>
-      안녕하세요
+      <div>💌 메인페이지</div>
+      <Intro />
     </div>
   );
 }
