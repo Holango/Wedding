@@ -24,6 +24,8 @@ const Gallery = () => {
           src={images[currentIndex]}
           alt={`Gallery ${currentIndex}`}
           style={styles.image}
+          onContextMenu={(e) => e.preventDefault()}  // 우클릭 및 롱탭 메뉴 차단
+          draggable={false} // 드래그 방지
         />
       </div>
       <div style={styles.buttonContainer}>
@@ -53,6 +55,11 @@ const styles = {
     width: '100%',
     borderRadius: '10px',
     boxShadow: '0 0 10px rgba(0,0,0,0.2)',
+    userSelect: 'none',        // 텍스트 선택 차단
+    WebkitUserSelect: 'none',  // 사파리용
+    MozUserSelect: 'none',
+    msUserSelect: 'none',
+    WebkitUserDrag: 'none',    // 이미지 드래그 차단 (크롬, 사파리)
   },
   buttonContainer: {
     marginTop: '1rem',
