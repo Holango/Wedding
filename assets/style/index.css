@@ -32,6 +32,23 @@ img {max-width:100%;}
 table {border-collapse:collapse; border-spacing:0; width:100%;}
 caption {overflow:hidden; width:0; height:0; text-indent:-9999px;}
 
+.material-symbols-sharp {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
+  font-family: 'Material Icons Sharp';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  direction: ltr;
+}
+
 main {
     width: 100%;
     max-width: 390px;
@@ -62,7 +79,7 @@ main {
 }
 .intro-wrap::after {
   content: "keyboard_arrow_down"; /* 여기에 원하는 아이콘 이름을 적습니다 */
-  font-family: 'Material Icons Round';
+  font-family: 'Material Icons Sharp';
   font-style: normal;
   font-weight: normal;
   font-size: 30px;
@@ -177,4 +194,131 @@ main {
 }
 .swiper-pagination {
     font-size: 15px;
+    color: var(--font-c-3);
+}
+.gallery-util [class^=swiper-button] {
+    top: -5px;
+    height: 20px;
+}
+.gallery-util [class^=swiper-button]::after {
+    color: var(--font-c-3);
+    font-size: 20px;
+}
+
+.account {
+    position: relative;
+    padding-top: 180px;
+}
+.account::before {
+    position: absolute;
+    top: 85px;
+    left: 50%;
+    width: 80px;
+    height: 78px;
+    transform: translateX(-50%);
+    background: url(/assets/images/ico5.png) center / 100% no-repeat;
+    content: '';
+}
+.account .tit {
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 45px;
+}
+.account .t-wrap {
+    padding: 0 30px;
+}
+
+.account .t-item {
+    border-bottom: 1px solid #000;
+}
+.account .t-trigger {
+    position: relative;
+    padding: 15px 40px 15px 10px;
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 700;
+    width: 100%;
+    text-align: left;
+}
+.account .t-trigger::after {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -12px;
+    content: "keyboard_arrow_down"; /* 여기에 원하는 아이콘 이름을 적습니다 */
+    font-family: 'Material Icons Sharp';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 1;
+}
+.account .t-trigger.active::after {
+    transform: scale(-1);
+}
+.account .t-cont {
+    display: none;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0, 0.1);
+}
+.account .a-item {
+    position: relative;
+    padding-right: 100px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.account .a-item .btn-copy {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    display: felx;
+    align-items: center;
+    font-size: 13px;
+    color: var(--font-c-4);
+    cursor: pointer;
+}
+.account .a-item .btn-copy span {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.account .a-item p + p {
+    margin-top: 5px;
+}
+.account .a-item p > span,
+.account .a-item p > strong {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 5px;
+}
+.map {
+    position: relative;
+    padding-top: 200px;
+}
+.map::before {
+    position: absolute;
+    top: 140px;
+    left: 50%;
+    margin-left: -100px;
+    content: '';
+    width: 200px;
+    height: 50px;
+    background: url(/assets/images/ico6.png) center / 150px no-repeat;
+}
+.map .tit {
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 45px;
+}
+.map .location {
+    text-align: center;
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 600;
+    color: var(--font-c-3);
+}
+.map .location span {
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
 }
