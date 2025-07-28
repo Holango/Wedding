@@ -123,10 +123,28 @@
                     <script>
                         var mapContainer = document.getElementById('map'); // 지도를 표시할 div
                         var mapOption = {
-                            center: new kakao.maps.LatLng(33.450701, 126.570667), // 중심 좌표
+                            center: new kakao.maps.LatLng(37.492052, 126.924225), // 중심 좌표
                             level: 3 // 확대 레벨
                         };
                         var map = new kakao.maps.Map(mapContainer, mapOption);
+                                // 마커 위치
+                        var markerPosition  = new kakao.maps.LatLng(37.492052, 126.924225);
+
+                        // 마커 생성
+                        var marker = new kakao.maps.Marker({
+                            position: markerPosition
+                        });
+
+                        // 마커 지도 위에 표시
+                        marker.setMap(map);
+
+                        // 인포윈도우 생성 및 설정
+                        var infowindow = new kakao.maps.InfoWindow({
+                            content : '<div style="padding:5px;">더에스비웨딩컨벤션</div>' // 띄우고 싶은 텍스트
+                        });
+
+                        // 마커 위에 인포윈도우 표시
+                        infowindow.open(map, marker);
                     </script>
                 </div>
                 <ul class="map-info">
