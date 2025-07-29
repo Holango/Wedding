@@ -204,7 +204,6 @@ main {
     color: var(--font-c-3);
     font-size: 20px;
 }
-
 .account {
     position: relative;
     padding-top: 180px;
@@ -216,7 +215,7 @@ main {
     width: 80px;
     height: 78px;
     transform: translateX(-50%);
-    background: url(/assets/images/ico5.png) center / 100% no-repeat;
+    background: url(/Wedding/assets/images/ico5.png) center / 100% no-repeat;
     content: '';
 }
 .account .tit {
@@ -225,7 +224,7 @@ main {
     margin-bottom: 45px;
 }
 .account .t-wrap {
-    padding: 0 30px;
+    padding: 0 15px;
 }
 
 .account .t-item {
@@ -303,7 +302,7 @@ main {
     content: '';
     width: 200px;
     height: 50px;
-    background: url(/assets/images/ico6.png) center / 150px no-repeat;
+    background: url(/Wedding/assets/images/ico6.png) center / 150px no-repeat;
 }
 .map .tit {
     text-align: center;
@@ -321,4 +320,63 @@ main {
     display: block;
     font-size: 15px;
     font-weight: 400;
+}
+.map .map-info {
+    margin-top: 50px;
+    color: var(--font-c-4);
+}
+.map .map-info li + li {
+    margin-top: 20px;
+}
+.map .map-info .title {
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--font-c-3);
+}
+.map .map-info .title i {
+    position: relative;
+    top: -4px;
+}
+.share {
+    position: relative;
+    padding-top: 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.share::before {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    content: '';
+    width: 63px;
+    height: 50px;
+    position: absolute;
+    background: url(/Wedding/assets/images/ico7.png) center / 63px no-repeat;
+}
+.btn-share {
+    display: inline-flex;
+    align-items: center;
+    color: var(--font-c-3);
+}
+.btn-share::before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+    display: block;
+    mask-repeat: no-repeat;
+    mask-position: 0 0;
+    mask-size: contain;
+    background-color: var(--font-c-4);
+}
+.btn-share.kakao::before {
+    mask-image: url(/Wedding/assets/images/ico_kakao.svg);
+}
+.btn-share.link::before {
+    mask-image: url(/Wedding/assets/images/ico_link.svg);
 }
