@@ -201,7 +201,26 @@
                     ]
                 });
             } else if (type == 'url') {
-                //share.copyCont(url, 'square', 'URL이 복사되었습니다.');
+
+                // 클립보드 복사
+                navigator.clipboard.writeText(shareUrl)
+                    .then(() => {
+                        alert('링크가 복사되었습니다!\n원하는 곳에 붙여넣기 하세요.');
+                    })
+                    .catch((err) => {
+                        // fallback 처리
+                        const textarea = document.createElement('textarea');
+                        textarea.value = url;
+                        document.body.appendChild(textarea);
+                        textarea.select();
+                        try {
+                            document.execCommand('copy');
+                            alert('청첩장 링크가 복사되었습니다!\n원하는 곳에 붙여넣기 하세요.');
+                        } catch (e) {
+                            alert('복사에 실패했습니다. 수동으로 복사해주세요.');
+                        }
+                        document.body.removeChild(textarea);
+                    });
             }
         }
     </script>
