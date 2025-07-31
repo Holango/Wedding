@@ -11,7 +11,7 @@ const swiper = new Swiper('.swiper', {
 });
 
 function copyCont() {
-    const copyBtns = vdocument.querySelectorAll('.btn-copy')
+    const copyBtns = document.querySelectorAll('.btn-copy')
     copyBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
             const copyCont = this.closest('.a-item').querySelector('.copy-cont');
