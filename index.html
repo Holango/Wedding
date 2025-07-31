@@ -165,7 +165,7 @@
                 </ul>
             </section>
             <section class="share">
-                <button type="button" class="btn-share kakao">카카오톡 공유하기</button>
+                <button type="button" class="btn-share kakao" onclick="shareSns(kakao)">카카오톡 공유하기</button>
                 <button type="button" class="btn-share link">URL 공유하기</button>
             </section>
         </section>
@@ -174,7 +174,36 @@
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script>
         Kakao.init('0975bc87ef09784ecd9e577b00606406'); // 자신의 JavaScript 키로 변경
-        console.log(Kakao.isInitialized()); // true면 초기화 성공
+        // 공유하기 
+        function shareSns(type) {
+            var url = `https://holango.github.io/Wedding/`;
+
+            if (type == 'kakao') {
+                Kakao.Share.sendDefault({
+                    objectType: 'feed',
+                    content: {
+                        title: '영훈, 예인의 결혼식에 소중한 분들을 초대합니다✉️',
+                        description: '2025년 10월 18일 토요일 오후 2시 보라매 더에스비웨딩컨벤션',
+                        imageUrl: 'https://holango.github.io/Wedding/assets/image/kakao_thumb.png', // 절대경로 이미지
+                        link: {
+                        mobileWebUrl: url,
+                        webUrl: url
+                        }
+                    },
+                    buttons: [
+                        {
+                        title: '청첩장 보러가기',
+                        link: {
+                            mobileWebUrl: url,
+                            webUrl: url
+                        }
+                        }
+                    ]
+                });
+            } else if (type == 'url') {
+                //share.copyCont(url, 'square', 'URL이 복사되었습니다.');
+            }
+        }
     </script>
 </body>
 </html>
