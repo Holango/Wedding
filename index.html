@@ -11,6 +11,7 @@
     <!-- js -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/Wedding/assets/js/index.js"></script>
 </head>
 <body>
     <header>
@@ -170,44 +171,10 @@
         </section>
     </main>
 
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script>
-        const swiper = new Swiper('.swiper', {
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'fraction',
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            }
-        });
-
-        $(function () {
-            $('.t-trigger').on('click', function () {
-                const $item = $(this).closest('.t-item');
-                $item.find('.t-cont').stop().slideToggle(200);
-                $(this).toggleClass('active');
-            });
-
-            $('.btn-copy').on('click', function () {
-            const $copyText = $(this).closest('.a-item').find('.copy-cont').text().trim();
-
-            if (!$copyText) {
-                alert('복사할 내용이 없습니다.');
-                return;
-            }
-
-            // 클립보드에 복사
-            navigator.clipboard.writeText($copyText)
-                .then(() => {
-                alert('복사되었습니다: ' + $copyText);
-                })
-                .catch(err => {
-                alert('복사 실패: ' + err);
-                });
-            });
-        });
+        Kakao.init('0975bc87ef09784ecd9e577b00606406'); // 자신의 JavaScript 키로 변경
+        console.log(Kakao.isInitialized()); // true면 초기화 성공
     </script>
 </body>
 </html>
