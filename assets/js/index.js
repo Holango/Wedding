@@ -1,15 +1,3 @@
-const swiper = new Swiper('.swiper', {
-    loop: true,
-    pagination: {
-        el: '.swiper-pagination',
-        type: 'fraction',
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    }
-});
-
 function copyCont() {
     const copyBtns = document.querySelectorAll('.btn-copy')
     copyBtns.forEach(function (btn) {
