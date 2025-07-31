@@ -33,17 +33,16 @@ function copyCont() {
     });
 }
 function slideToggle() {
-    const triggers = document.querySelectorAll('.t-trigger')
+    const triggers = document.querySelectorAll('.t-trigger');
     triggers.forEach(function (trigger) {
         trigger.addEventListener('click', function () {
             const item = this.closest('.t-item');
             const cont = item.querySelector('.t-cont');
-
-            // slideToggle 구현
-            if (cont.classList.contain('expand')) {
-                cont.classList.remove('expand')
+            
+            if (cont.classList.contains('expand')) {
+                cont.classList.remove('expand');
             } else {
-                cont.classList.add('expand')
+                cont.classList.add('expand');
             }
 
             this.classList.toggle('active');
