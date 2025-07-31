@@ -255,9 +255,14 @@ main {
     transform: scale(-1);
 }
 .account .t-cont {
-    display: none;
-    padding-top: 20px;
     border-top: 1px solid rgba(0,0,0, 0.1);
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease;
+}
+.account .t-cont.expand {
+    padding-top: 20px;
+    max-height: 300px;
 }
 .account .a-item {
     position: relative;

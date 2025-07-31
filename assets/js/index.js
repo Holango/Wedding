@@ -40,10 +40,10 @@ function slideToggle() {
             const cont = item.querySelector('.t-cont');
 
             // slideToggle 구현
-            if (cont.style.maxHeight) {
-                cont.style.maxHeight = null;
+            if (cont.classList.contain('expand')) {
+                cont.classList.remove('expand')
             } else {
-                cont.style.maxHeight = cont.scrollHeight + 'px';
+                cont.classList.add('expand')
             }
 
             this.classList.toggle('active');
