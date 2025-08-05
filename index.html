@@ -199,6 +199,8 @@
         // 공유하기 
         function shareSns(type) {
             var url = `https://holango.github.io/Wedding/`;
+            var mapUrl = `https://naver.me/5UEcpkH3`;
+            var mapMUrl = `https://naver.me/F64xI5Th`
 
             if (type == 'kakao') {
                 Kakao.Share.sendDefault({
@@ -223,8 +225,8 @@
                         {
                             title: '위치 보기',
                             link: {
-                                mobileWebUrl: 'https://naver.me/F64xI5Th',
-                                webUrl: 'https://naver.me/5UEcpkH3'
+                                mobileWebUrl: mapMUrl,
+                                webUrl: mapUrl
                             }
                         }
                     ]
