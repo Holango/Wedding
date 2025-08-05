@@ -199,8 +199,6 @@
         // 공유하기 
         function shareSns(type) {
             var url = `https://holango.github.io/Wedding/`;
-            var mapUrl = `https://naver.me/5UEcpkH3`;
-            var mapMUrl = `https://naver.me/F64xI5Th`
 
             if (type == 'kakao') {
                 Kakao.Share.sendDefault({
@@ -216,19 +214,12 @@
                     },
                     buttons: [
                         {
-                            title: '웹으로 이동',
+                            title: '청첩장 보러가기',
                             link: {
-                                mobileWebUrl: 'https://developers.kakao.com',
-                                webUrl: 'https://developers.kakao.com',
+                                mobileWebUrl: url,
+                                webUrl: url,
                             },
-                        },
-                            {
-                            title: '앱으로 이동',
-                            link: {
-                                mobileWebUrl: 'https://developers.kakao.com',
-                                webUrl: 'https://developers.kakao.com',
-                            },
-                        },
+                        }
                     ],
                 });
             } else if (type == 'url') {
