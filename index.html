@@ -128,7 +128,7 @@
                 </p>
                 <div class="map-area">
                     <div id="map" style="width:100%;height:300px;"></div>
-                    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0975bc87ef09784ecd9e577b00606406"></script>
+                    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2916c516c51296b951ff5aa7675985a1"></script>
                     <script>
                         var mapContainer = document.getElementById('map'); // 지도를 표시할 div
                         var mapOption = {
@@ -195,10 +195,12 @@
 
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script>
-        Kakao.init('0975bc87ef09784ecd9e577b00606406'); // 자신의 JavaScript 키로 변경
+        Kakao.init('2916c516c51296b951ff5aa7675985a1'); // 자신의 JavaScript 키로 변경
         // 공유하기 
         function shareSns(type) {
             var url = `https://holango.github.io/Wedding/`;
+            var mapUrl = `https://naver.me/5UEcpkH3`;
+            var mapMUrl = `https://naver.me/F64xI5Th`
 
             if (type == 'kakao') {
                 Kakao.Share.sendDefault({
@@ -214,13 +216,20 @@
                     },
                     buttons: [
                         {
-                            title: '청첩장 보러가기',
+                            title: '청첩장 보기',
                             link: {
                                 mobileWebUrl: url,
-                                webUrl: url,
-                            },
+                                webUrl: url
+                            }
+                        },
+                        {
+                            title: '위치 보기',
+                            link: {
+                                mobileWebUrl: mapMUrl,
+                                webUrl: mapUrl
+                            }
                         }
-                    ],
+                    ]
                 });
             } else if (type == 'url') {
 
