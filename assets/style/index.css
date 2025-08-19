@@ -344,29 +344,63 @@ main {
     position: relative;
     top: -4px;
 }
+.bus-info-wrap {
+    position: relative;
+    padding-top: 120px;
+}
+.bus-info-wrap::before {
+    position: absolute;
+    top: 110px;
+    left: 60px;
+    width: 30px;
+    height: 60px;
+    background: url(/Wedding//assets/images/ico7.png) 0 0 / 100% no-repeat;
+    content: '';
+}
+.bus-info-wrap .tit {
+    font-weight: bold;
+    color: var(--font-c-3);
+    margin-bottom: 15px;
+}
+.bus-info-wrap .desc {
+    text-align: center;
+    font-size: 15px;
+    line-height: 22px;
+}
+.bus-info-wrap .tbl {
+    margin-top: 35px;
+    border-top: 2px solid var(--font-c-4);
+    border-bottom: 1px solid var(--font-c-4);
+}
+.bus-info-wrap .tbl td {
+    padding: 15px 5px;
+}
+.bus-info-wrap .tbl td + td {
+    border-left: 1px dashed rgba(0, 0, 0, 0.1);
+    text-align: right;
+    font-weight: bold;
+}
+.bus-info-wrap .contact {
+    margin-top: 10px;
+    text-align: right;
+    font-size: 14px;
+}
 .share {
     position: relative;
-    padding-top: 160px;
+    padding-top: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
     gap: 20px;
-}
-.share::before {
-    position: absolute;
-    top: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    content: '';
-    width: 63px;
-    height: 50px;
-    position: absolute;
-    background: url(/Wedding/assets/images/ico7.png) center / 63px no-repeat;
 }
 .btn-share {
     display: inline-flex;
     align-items: center;
     color: var(--font-c-3);
+    padding: 10px 20px;
+    border-radius: 100px;
+    border: 1px solid var(--font-c-4);
 }
 .btn-share::before {
     content: '';
