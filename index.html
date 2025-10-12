@@ -26,6 +26,89 @@
             <p class="date">2025.10.18.토요일</p>
         </section>
         <section class="wedding-contents">
+            <section class="map">
+                <p class="tit">오시는 길</p>
+                <p class="location">
+                    더에스비웨딩컨벤션
+                    <span>(서울 동작구 보라매로5길 15)</span>
+                </p>
+                <div class="map-area">
+                    <div id="map" style="width:100%;height:300px;"></div>
+                    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0975bc87ef09784ecd9e577b00606406"></script>
+                    <script>
+                        var mapContainer = document.getElementById('map'); // 지도를 표시할 div
+                        var mapOption = {
+                            center: new kakao.maps.LatLng(37.492052, 126.924225), // 중심 좌표
+                            level: 3 // 확대 레벨
+                        };
+                        var map = new kakao.maps.Map(mapContainer, mapOption);
+                                // 마커 위치
+                        var markerPosition  = new kakao.maps.LatLng(37.492052, 126.924225);
+
+                        // 마커 생성
+                        var marker = new kakao.maps.Marker({
+                            position: markerPosition
+                        });
+
+                        // 마커 지도 위에 표시
+                        marker.setMap(map);
+
+                        // 인포윈도우 생성 및 설정
+                        var infowindow = new kakao.maps.InfoWindow({
+                            content : '<div style="padding:5px;">더에스비웨딩컨벤션</div>' // 띄우고 싶은 텍스트
+                        });
+
+                        // 마커 위에 인포윈도우 표시
+                        infowindow.open(map, marker);
+                    </script>
+                </div>
+                <ul class="map-info">
+                    <li>
+                        <p class="title">버스 <i>🚌</i></p>
+                        <p class="info">마을 : 동작05, 동작05-1<br>지선 : 5561, 5525</p>
+                    </li>
+                    <li>
+                        <p class="title">지하철 <i>🚊</i></p>
+                        <p class="info">신림선 보라매병원역 하차 후<br>
+                            건설전문회관 방향 2번 출구 연결<br>→ 3층 더에스비웨딩컨벤션</p>
+                    </li>
+                    <li>
+                        <p class="title">주차장 <i>🚘</i></p>
+                        <p class="info">건설전문회관 지하주차장 이용 (3시간 무료)</p>
+                    </li>
+                </ul>
+                <div class="bus-info-wrap">
+                    <p class="tit">신랑측 전세버스 안내</p>
+                    <p class="desc">
+                        하객 여러분의 편의를 위해 전세버스를 준비하였습니다.<br>
+                        이용을 원하시는 분들은 아래 시간을 참고해 주세요.
+                    </p>
+                    <p class="sub-txt">버스 번호 : 대구 78바 1946</p>
+                    <table class="tbl">
+                        <colgroup>
+                            <col style="width: *;">
+                            <col style="width: 30%;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>내당 홈플러스 앞</td>
+                                <td>8시 30분</td>
+                            </tr>
+                            <tr>
+                                <td>성서 홈플러서 앞</td>
+                                <td>9시</td>
+                            </tr>
+                            <tr>
+                                <td>북구미 톨게이트 큰 회전로타리</td>
+                                <td>9시 40분</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="contact">
+                        문의 : 삼촌 <a href="tel:+010-5599-1147">010-5599-1147</a>
+                    </p>
+                </div>
+            </section>
             <figure class="main-visual">
                 <img src="/Wedding/assets/images/img04.png" alt="">
             </figure>
@@ -115,89 +198,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section class="map">
-                <p class="tit">오시는 길</p>
-                <p class="location">
-                    더에스비웨딩컨벤션
-                    <span>(서울 동작구 보라매로5길 15)</span>
-                </p>
-                <div class="map-area">
-                    <div id="map" style="width:100%;height:300px;"></div>
-                    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0975bc87ef09784ecd9e577b00606406"></script>
-                    <script>
-                        var mapContainer = document.getElementById('map'); // 지도를 표시할 div
-                        var mapOption = {
-                            center: new kakao.maps.LatLng(37.492052, 126.924225), // 중심 좌표
-                            level: 3 // 확대 레벨
-                        };
-                        var map = new kakao.maps.Map(mapContainer, mapOption);
-                                // 마커 위치
-                        var markerPosition  = new kakao.maps.LatLng(37.492052, 126.924225);
-
-                        // 마커 생성
-                        var marker = new kakao.maps.Marker({
-                            position: markerPosition
-                        });
-
-                        // 마커 지도 위에 표시
-                        marker.setMap(map);
-
-                        // 인포윈도우 생성 및 설정
-                        var infowindow = new kakao.maps.InfoWindow({
-                            content : '<div style="padding:5px;">더에스비웨딩컨벤션</div>' // 띄우고 싶은 텍스트
-                        });
-
-                        // 마커 위에 인포윈도우 표시
-                        infowindow.open(map, marker);
-                    </script>
-                </div>
-                <ul class="map-info">
-                    <li>
-                        <p class="title">버스 <i>🚌</i></p>
-                        <p class="info">마을 : 동작05, 동작05-1<br>지선 : 5561, 5525</p>
-                    </li>
-                    <li>
-                        <p class="title">지하철 <i>🚊</i></p>
-                        <p class="info">신림선 보라매병원역 하차 후<br>
-                            건설전문회관 방향 2번 출구 연결<br>→ 3층 더에스비웨딩컨벤션</p>
-                    </li>
-                    <li>
-                        <p class="title">주차장 <i>🚘</i></p>
-                        <p class="info">건설전문회관 지하주차장 이용 (3시간 무료)</p>
-                    </li>
-                </ul>
-                <div class="bus-info-wrap">
-                    <p class="tit">신랑측 전세버스 안내</p>
-                    <p class="desc">
-                        하객 여러분의 편의를 위해 전세버스를 준비하였습니다.<br>
-                        이용을 원하시는 분들은 아래 시간을 참고해 주세요.
-                    </p>
-                    <p class="sub-txt">버스 번호 : 대구 78바 1946</p>
-                    <table class="tbl">
-                        <colgroup>
-                            <col style="width: *;">
-                            <col style="width: 30%;">
-                        </colgroup>
-                        <tbody>
-                            <tr>
-                                <td>내당 홈플러스 앞</td>
-                                <td>8시 30분</td>
-                            </tr>
-                            <tr>
-                                <td>성서 홈플러서 앞</td>
-                                <td>9시</td>
-                            </tr>
-                            <tr>
-                                <td>북구미 톨게이트 큰 회전로타리</td>
-                                <td>9시 40분</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p class="contact">
-                        문의 : 삼촌 <a href="tel:+010-5599-1147">010-5599-1147</a>
-                    </p>
                 </div>
             </section>
             <section class="share">
