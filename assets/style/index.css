@@ -326,6 +326,9 @@ main {
     font-size: 15px;
     font-weight: 400;
 }
+.map .map-area {
+    margin-top: 20px
+}
 .map .map-info {
     margin-top: 50px;
     color: var(--font-c-4);
@@ -366,6 +369,12 @@ main {
     text-align: center;
     font-size: 15px;
     line-height: 22px;
+}
+.bus-info-wrap .txt {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 17px;
+    line-height: 25px;
 }
 .bus-info-wrap .tbl {
     margin-top: 35px;
