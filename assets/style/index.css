@@ -350,6 +350,7 @@ main {
 .bus-info-wrap {
     position: relative;
     padding-top: 120px;
+    padding-bottom: 60px;
 }
 .bus-info-wrap::before {
     position: absolute;
