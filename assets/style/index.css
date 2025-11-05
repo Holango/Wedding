@@ -430,5 +430,5 @@ main {
     mask-image: url(/Wedding/assets/images/ico_link.svg);
 }
 
-.thanks {width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center;}
-.thanks img {display: block;max-width: 800px;}
+.thanks {width: 100vw; height: 100vh; padding: 20px; display: flex; align-items: center; justify-content: center;}
+.thanks img {display: block;max-width: 800px; width: 100%;}
